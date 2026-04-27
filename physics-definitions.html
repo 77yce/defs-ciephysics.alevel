@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIE A Level Physics 9702 — Definition Terms</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface2: #f0ede6;
+    --border: #d8d3c8;
+    --text: #1a1815;
+    --text2: #6b6560;
+    --text3: #9e9890;
+    --accent: #2d4a3e;
+    --accent-light: #e8f0ed;
+    --define-bg: #f0ede6;
+    --define-text: #3d2e1a;
+    --define-border: #c4a97a;
+    --key-bg: #e8f0ed;
+    --key-text: #1a3329;
+    --key-border: #7aad96;
+    --as-bg: #e8edf5;
+    --as-text: #1a2540;
+    --al-bg: #f5e8e8;
+    --al-text: #401a1a;
+    --modal-bg: rgba(26,24,21,0.7);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 40px solid rgba(255,255,255,0.07);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 50px solid rgba(255,255,255,0.04);
+  }
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0.5rem;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+    position: relative;
+    z-index: 1;
+  }
+  header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 1;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    position: relative;
+    z-index: 1;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+  .legend-badge {
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .lb-define { background: var(--define-bg); color: var(--define-text); }
+  .lb-key { background: var(--key-bg); color: var(--key-text); }
+  .lb-as { background: var(--as-bg); color: var(--as-text); }
+  .lb-al { background: var(--al-bg); color: var(--al-text); }
+
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .search-wrap {
+    flex: 1;
+    min-width: 180px;
+    position: relative;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text3);
+    pointer-events: none;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 7px 12px 7px 36px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus { border-color: var(--accent); }
+
+  main { padding: 1.5rem 2rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .count-bar {
+    font-size: 12px;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 1.25rem;
+  }
+  .topic-section { margin-bottom: 1.75rem; }
+  .topic-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .topic-header span {
+    font-size: 11px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text2);
+    font-weight: 400;
+  }
+  .topic-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .level-tag {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .level-as { background: var(--as-bg); color: var(--as-text); }
+  .level-al { background: var(--al-bg); color: var(--al-text); }
+  .terms-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .term-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .term-pill:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(45,74,62,0.1);
+  }
+  .badge {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    border: 1px solid transparent;
+  }
+  .badge-define { background: var(--define-bg); color: var(--define-text); border-color: var(--define-border); }
+  .badge-key { background: var(--key-bg); color: var(--key-text); border-color: var(--key-border); }
+  .no-results {
+    font-size: 14px;
+    color: var(--text3);
+    padding: 2rem 0;
+    font-style: italic;
+  }
+
+  /* Modal */
+  .modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--modal-bg);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 0;
+    max-width: 520px;
+    width: 100%;
+    overflow: hidden;
+    animation: modalIn 0.18s ease;
+  }
+  @keyframes modalIn { from { opacity:0; transform: translateY(8px) scale(0.98); } to { opacity:1; transform: none; } }
+  .modal-header {
+    background: var(--accent);
+    padding: 1.25rem 1.5rem 1rem;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px; right: 14px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.25); }
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .modal-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+  .modal-body { padding: 1.25rem 1.5rem; }
+  .def-label {
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .def-text {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    padding: 14px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 14px;
+  }
+  .modal-note {
+    font-size: 12px;
+    color: var(--text2);
+    background: var(--surface2);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-style: italic;
+  }
+  .modal-note::before { content: '💡 '; font-style: normal; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Cambridge International — 9702</div>
+  <h1>A Level Physics<br>Definition Terms</h1>
+  <p>All key terms and explicit definition points from the 2025–2027 syllabus</p>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-badge lb-define">define</span> Explicit spec definition point</div>
+    <div class="legend-item"><span class="legend-badge lb-key">key</span> Important supporting term</div>
+    <div class="legend-item"><span class="legend-badge lb-as">AS</span> AS Level</div>
+    <div class="legend-item"><span class="legend-badge lb-al">A2</span> A Level only</div>
+  </div>
+</header>
+
+<div class="controls">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="as">AS Level</button>
+  <button class="filter-btn" data-filter="al">A Level</button>
+  <button class="filter-btn" data-filter="define">Must define</button>
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Search terms or definitions…" />
+  </div>
+</div>
+
+<main>
+  <div class="count-bar" id="countBar"></div>
+  <div id="output"></div>
+</main>
+
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-meta" id="mMeta"></div>
+    </div>
+    <div class="modal-body">
+      <div class="def-label">Definition</div>
+      <div class="def-text" id="mDef"></div>
+      <div class="modal-note" id="mNote" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  {topic:"1. Physical quantities & units", level:"as", terms:[
+    {t:"Physical quantity", type:"key", def:"A measurable property of an object or phenomenon, consisting of a numerical magnitude and a unit.", note:"e.g. mass, length, velocity"},
+    {t:"SI base unit", type:"key", def:"One of the seven fundamental units of the International System of Units from which all other units are derived.", note:"kg, m, s, A, K, mol, cd"},
+    {t:"Homogeneity (of equations)", type:"key", def:"An equation is homogeneous if the units on both sides are identical. Used to verify equations are physically valid.", note:"Does not prove an equation is correct — only that it could be"},
+    {t:"Systematic error", type:"define", def:"An error that causes readings to be consistently above or below the true value, often due to a fault in apparatus or method.", note:"Cannot be reduced by repeating measurements"},
+    {t:"Zero error", type:"key", def:"A type of systematic error where an instrument gives a non-zero reading when the true value is zero.", note:""},
+    {t:"Random error", type:"define", def:"An error that causes readings to vary unpredictably around the true value, due to uncontrollable factors.", note:"Reduced by taking more readings and averaging"},
+    {t:"Precision", type:"define", def:"How closely repeated measurements agree with each other; related to the spread of results.", note:"High precision = small random error"},
+    {t:"Accuracy", type:"define", def:"How close a measurement is to the true value.", note:"High accuracy = small systematic error"},
+    {t:"Uncertainty", type:"key", def:"The range within which the true value is expected to lie, reflecting the limitations of the measurement.", note:"Can be absolute or percentage"},
+    {t:"Scalar", type:"define", def:"A physical quantity that has magnitude only.", note:"e.g. speed, mass, energy, temperature"},
+    {t:"Vector", type:"define", def:"A physical quantity that has both magnitude and direction.", note:"e.g. velocity, force, displacement, acceleration"},
+  ]},
+  {topic:"2. Kinematics", level:"as", terms:[
+    {t:"Distance", type:"key", def:"The total length of path travelled by an object, regardless of direction. A scalar quantity.", note:""},
+    {t:"Displacement", type:"define", def:"The straight-line distance from the start point to the end point in a specified direction. A vector quantity.", note:""},
+    {t:"Speed", type:"key", def:"The rate of change of distance with time. A scalar quantity.", note:"speed = distance / time"},
+    {t:"Velocity", type:"define", def:"The rate of change of displacement with time. A vector quantity.", note:"v = Δs / Δt"},
+    {t:"Acceleration", type:"define", def:"The rate of change of velocity with time. A vector quantity.", note:"a = Δv / Δt"},
+    {t:"Acceleration of free fall (g)", type:"key", def:"The acceleration of an object falling freely under gravity alone, approximately 9.81 m s⁻² near Earth's surface.", note:""},
+  ]},
+  {topic:"3. Dynamics", level:"as", terms:[
+    {t:"Mass", type:"define", def:"The property of an object that resists change in motion (inertia). A scalar base quantity measured in kg.", note:""},
+    {t:"Linear momentum", type:"define", def:"The product of an object's mass and velocity. p = mv. A vector quantity measured in kg m s⁻¹.", note:""},
+    {t:"Newton's first law", type:"define", def:"An object remains at rest or moves with constant velocity unless acted on by a resultant force.", note:""},
+    {t:"Newton's second law", type:"define", def:"The resultant force on an object equals the rate of change of its momentum. F = ma when mass is constant.", note:""},
+    {t:"Newton's third law", type:"define", def:"When object A exerts a force on object B, object B exerts an equal and opposite force on object A.", note:"Forces act on different objects and are of the same type"},
+    {t:"Weight", type:"define", def:"The gravitational force acting on an object. W = mg, where g is the gravitational field strength.", note:"A vector; always acts downward toward Earth's centre"},
+    {t:"Terminal velocity", type:"define", def:"The constant velocity reached when the driving or gravitational force equals the resistive force, giving zero resultant force.", note:""},
+    {t:"Conservation of momentum", type:"define", def:"The total momentum of a closed system remains constant, provided no external forces act on the system.", note:""},
+    {t:"Elastic collision", type:"define", def:"A collision in which total kinetic energy is conserved, as well as momentum.", note:"Relative speed of approach = relative speed of separation"},
+    {t:"Inelastic collision", type:"define", def:"A collision in which momentum is conserved but total kinetic energy is not conserved.", note:""},
+  ]},
+  {topic:"4. Forces, density & pressure", level:"as", terms:[
+    {t:"Centre of gravity", type:"define", def:"The single point at which the entire weight of an object may be considered to act.", note:""},
+    {t:"Moment of a force", type:"define", def:"The product of a force and the perpendicular distance from the pivot to the line of action of the force.", note:"Moment = F × d⊥"},
+    {t:"Couple", type:"define", def:"A pair of equal and opposite parallel forces whose lines of action do not coincide, producing rotation only.", note:""},
+    {t:"Torque of a couple", type:"define", def:"The product of one of the forces and the perpendicular distance between the lines of action of the forces.", note:"τ = F × d"},
+    {t:"Principle of moments", type:"define", def:"For a body in equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments about the same point.", note:""},
+    {t:"Equilibrium", type:"define", def:"A state in which there is no resultant force and no resultant torque acting on an object.", note:""},
+    {t:"Density", type:"define", def:"Mass per unit volume of a substance. ρ = m/V. Measured in kg m⁻³.", note:""},
+    {t:"Pressure", type:"define", def:"Force per unit area acting perpendicular to a surface. p = F/A. Measured in pascals (Pa).", note:""},
+    {t:"Upthrust", type:"key", def:"The upward force on an object in a fluid, equal to the weight of fluid displaced (Archimedes' principle). F = ρgV.", note:"Due to difference in hydrostatic pressure"},
+  ]},
+  {topic:"5. Work, energy & power", level:"as", terms:[
+    {t:"Work done", type:"define", def:"The product of a force and the displacement in the direction of the force. W = Fs cosθ. Measured in joules (J).", note:""},
+    {t:"Conservation of energy", type:"define", def:"Energy cannot be created or destroyed; it can only be transferred from one form to another. The total energy of a closed system remains constant.", note:""},
+    {t:"Efficiency", type:"define", def:"The ratio of useful energy output to total energy input, often expressed as a percentage.", note:"η = useful output / total input"},
+    {t:"Power", type:"define", def:"The rate of doing work, or the rate of energy transfer. P = W/t. Measured in watts (W).", note:"Also P = Fv"},
+    {t:"Gravitational potential energy", type:"define", def:"The energy stored in an object due to its position in a gravitational field. ΔEₚ = mgΔh.", note:""},
+    {t:"Kinetic energy", type:"define", def:"The energy an object possesses due to its motion. Eₖ = ½mv².", note:""},
+  ]},
+  {topic:"6. Deformation of solids", level:"as", terms:[
+    {t:"Hooke's law", type:"define", def:"The extension of a material is directly proportional to the applied force, provided the limit of proportionality is not exceeded.", note:"F = kx"},
+    {t:"Spring constant (k)", type:"define", def:"The force per unit extension of a spring. k = F/x. Measured in N m⁻¹.", note:""},
+    {t:"Stress", type:"define", def:"The force per unit cross-sectional area applied to a material. σ = F/A. Measured in pascals (Pa).", note:""},
+    {t:"Strain", type:"define", def:"The ratio of extension to original length of a material. ε = x/L. Dimensionless.", note:""},
+    {t:"Young modulus", type:"define", def:"The ratio of stress to strain for a material deformed within its limit of proportionality. E = σ/ε. Measured in Pa.", note:""},
+    {t:"Limit of proportionality", type:"define", def:"The point beyond which extension is no longer proportional to the applied force.", note:""},
+    {t:"Elastic limit", type:"define", def:"The maximum stress beyond which a material will not return to its original shape when the force is removed.", note:""},
+    {t:"Elastic deformation", type:"define", def:"Deformation in which a material returns to its original shape when the deforming force is removed.", note:""},
+    {t:"Plastic deformation", type:"define", def:"Permanent deformation that remains after the deforming force is removed.", note:""},
+    {t:"Elastic potential energy", type:"key", def:"Energy stored in a deformed material. Eₚ = ½Fx = ½kx² within the limit of proportionality.", note:"Equal to area under force–extension graph"},
+  ]},
+  {topic:"7. Waves", level:"as", terms:[
+    {t:"Displacement (waves)", type:"define", def:"The distance and direction of a point on a wave from its equilibrium position.", note:""},
+    {t:"Amplitude", type:"define", def:"The maximum displacement of a point on a wave from its equilibrium position.", note:""},
+    {t:"Period", type:"define", def:"The time taken for one complete oscillation or wave cycle. Measured in seconds.", note:"T = 1/f"},
+    {t:"Frequency", type:"define", def:"The number of complete oscillations or wave cycles per unit time. Measured in hertz (Hz).", note:"f = 1/T"},
+    {t:"Wavelength", type:"define", def:"The distance between two adjacent points that are in phase on a wave, e.g. crest to crest.", note:""},
+    {t:"Wave speed", type:"key", def:"The speed at which energy is transferred by a wave. v = fλ.", note:""},
+    {t:"Phase difference", type:"define", def:"The fraction of a cycle by which one wave or point on a wave leads or lags another, measured in degrees or radians.", note:""},
+    {t:"Intensity", type:"define", def:"The power transmitted per unit area perpendicular to the direction of wave travel. I = P/A. Measured in W m⁻².", note:"I ∝ amplitude²"},
+    {t:"Transverse wave", type:"define", def:"A wave in which the oscillations are perpendicular to the direction of energy transfer.", note:"e.g. light, water waves"},
+    {t:"Longitudinal wave", type:"define", def:"A wave in which the oscillations are parallel to the direction of energy transfer.", note:"e.g. sound"},
+    {t:"Doppler effect", type:"define", def:"The change in observed frequency of a wave when the source moves relative to a stationary observer.", note:"fₒ = fₛv / (v ± vₛ)"},
+    {t:"Polarisation", type:"define", def:"A property of transverse waves where oscillations are restricted to a single plane perpendicular to the direction of propagation.", note:"Cannot occur in longitudinal waves"},
+  ]},
+  {topic:"8. Superposition", level:"as", terms:[
+    {t:"Principle of superposition", type:"define", def:"When two or more waves meet at a point, the resultant displacement is the vector sum of the individual displacements.", note:""},
+    {t:"Stationary wave", type:"define", def:"A wave pattern formed by the superposition of two waves of equal frequency and amplitude travelling in opposite directions.", note:"No net energy transfer"},
+    {t:"Node", type:"define", def:"A point on a stationary wave where the amplitude is always zero due to permanent destructive interference.", note:""},
+    {t:"Antinode", type:"define", def:"A point on a stationary wave where the amplitude is maximum due to permanent constructive interference.", note:""},
+    {t:"Diffraction", type:"define", def:"The spreading of a wave as it passes through a gap or around an obstacle.", note:"Most significant when gap width ≈ wavelength"},
+    {t:"Interference", type:"define", def:"The superposition of waves from two coherent sources, producing regions of reinforcement and cancellation.", note:""},
+    {t:"Coherence", type:"define", def:"Two sources are coherent if they have the same frequency and a constant phase difference.", note:""},
+    {t:"Path difference", type:"key", def:"The difference in distance travelled by two waves from their sources to a given point.", note:"Determines constructive or destructive interference"},
+  ]},
+  {topic:"9. Electricity", level:"as", terms:[
+    {t:"Electric current", type:"define", def:"The rate of flow of electric charge. I = ΔQ/Δt. Measured in amperes (A).", note:""},
+    {t:"Charge (quantised)", type:"key", def:"Electric charge exists only in discrete multiples of the elementary charge e = 1.6 × 10⁻¹⁹ C.", note:""},
+    {t:"Potential difference", type:"define", def:"The energy transferred per unit charge between two points in a circuit. V = W/Q. Measured in volts (V).", note:""},
+    {t:"Resistance", type:"define", def:"The ratio of potential difference across a component to the current through it. R = V/I. Measured in ohms (Ω).", note:""},
+    {t:"Ohm's law", type:"define", def:"The current through a conductor is directly proportional to the potential difference across it, provided temperature is constant.", note:""},
+    {t:"Resistivity", type:"define", def:"A property of a material that relates resistance to its dimensions. R = ρL/A. Measured in Ω m.", note:""},
+  ]},
+  {topic:"10. D.C. circuits", level:"as", terms:[
+    {t:"Electromotive force (e.m.f.)", type:"define", def:"The energy transferred per unit charge by a source in driving charge around a complete circuit. Measured in volts (V).", note:"Distinct from p.d.: e.m.f. is a source of energy, p.d. is energy transferred to a component"},
+    {t:"Internal resistance", type:"key", def:"The resistance within a source of e.m.f. causing the terminal p.d. to be less than the e.m.f. when current flows.", note:"Terminal p.d. = e.m.f. – Ir"},
+    {t:"Kirchhoff's first law", type:"define", def:"The sum of currents entering a junction equals the sum of currents leaving it. A consequence of conservation of charge.", note:""},
+    {t:"Kirchhoff's second law", type:"define", def:"The sum of the e.m.f.s around any closed loop equals the sum of the potential differences around the same loop. A consequence of conservation of energy.", note:""},
+    {t:"Potential divider", type:"key", def:"A circuit using resistors (or sensors) in series to provide a fraction of the supply voltage as an output.", note:""},
+  ]},
+  {topic:"11. Particle physics", level:"as", terms:[
+    {t:"Nucleon number (A)", type:"define", def:"The total number of protons and neutrons in a nucleus.", note:"Also called mass number"},
+    {t:"Proton number (Z)", type:"define", def:"The number of protons in a nucleus, which defines the element.", note:"Also called atomic number"},
+    {t:"Isotopes", type:"define", def:"Atoms of the same element with the same proton number but different numbers of neutrons in their nuclei.", note:""},
+    {t:"Alpha particle (α)", type:"define", def:"A particle emitted in radioactive decay consisting of 2 protons and 2 neutrons (helium-4 nucleus). Charge +2e.", note:""},
+    {t:"Beta-minus particle (β⁻)", type:"define", def:"A high-speed electron emitted from the nucleus during β⁻ decay, when a neutron converts to a proton. Accompanied by an antineutrino.", note:""},
+    {t:"Beta-plus particle (β⁺)", type:"define", def:"A positron emitted from the nucleus during β⁺ decay, when a proton converts to a neutron. Accompanied by a neutrino.", note:""},
+    {t:"Gamma radiation (γ)", type:"define", def:"High-energy electromagnetic radiation emitted from an excited nucleus following radioactive decay. No charge, negligible mass.", note:""},
+    {t:"Antiparticle", type:"define", def:"A particle with the same mass as its corresponding particle but opposite charge.", note:"e.g. positron is antiparticle of electron"},
+    {t:"Quark", type:"define", def:"A fundamental particle from which hadrons are built. Six flavours: up, down, strange, charm, top, bottom.", note:""},
+    {t:"Hadron", type:"define", def:"A composite particle made of quarks. Baryons have 3 quarks; mesons have 1 quark and 1 antiquark.", note:""},
+    {t:"Baryon", type:"define", def:"A hadron consisting of three quarks. e.g. proton (uud) and neutron (udd).", note:""},
+    {t:"Meson", type:"define", def:"A hadron consisting of one quark and one antiquark.", note:""},
+    {t:"Lepton", type:"define", def:"A fundamental particle not made of quarks. Electrons and neutrinos are leptons.", note:""},
+  ]},
+  {topic:"12. Circular motion", level:"al", terms:[
+    {t:"Radian", type:"define", def:"The angle subtended at the centre of a circle by an arc equal in length to the radius. 2π rad = 360°.", note:""},
+    {t:"Angular speed (ω)", type:"define", def:"The angle swept out per unit time by a rotating body. ω = 2π/T = v/r. Measured in rad s⁻¹.", note:""},
+    {t:"Centripetal acceleration", type:"define", def:"The acceleration directed towards the centre of a circular path, of magnitude a = rω² = v²/r.", note:""},
+    {t:"Centripetal force", type:"define", def:"The resultant force directed towards the centre of a circular path, causing centripetal acceleration. F = mrω² = mv²/r.", note:"Not a separate force — it is provided by existing forces (e.g. tension, gravity)"},
+  ]},
+  {topic:"13. Gravitational fields", level:"al", terms:[
+    {t:"Gravitational field", type:"define", def:"A region of space in which a mass experiences a force due to gravity. Defined as gravitational force per unit mass.", note:""},
+    {t:"Gravitational field strength (g)", type:"define", def:"The gravitational force per unit mass at a point in a field. g = F/m. Measured in N kg⁻¹.", note:"g = GM/r²"},
+    {t:"Newton's law of gravitation", type:"define", def:"The gravitational force between two point masses is proportional to the product of their masses and inversely proportional to the square of their separation.", note:"F = Gm₁m₂/r²"},
+    {t:"Geostationary orbit", type:"define", def:"An orbit in which a satellite remains stationary above a fixed point on the equator, with a period of 24 hours, orbiting west to east.", note:"Used for communications satellites"},
+    {t:"Gravitational potential (φ)", type:"define", def:"The work done per unit mass in bringing a small test mass from infinity to that point in the field. φ = –GM/r. Measured in J kg⁻¹.", note:"Always negative; zero at infinity"},
+    {t:"Gravitational potential energy", type:"key", def:"The energy of a mass m at a point in a gravitational field. Eₚ = –GMm/r.", note:""},
+  ]},
+  {topic:"14. Temperature", level:"al", terms:[
+    {t:"Thermal equilibrium", type:"define", def:"A state in which two or more objects in contact have the same temperature and there is no net energy transfer between them.", note:""},
+    {t:"Thermodynamic temperature (T)", type:"key", def:"Temperature on the Kelvin scale, independent of any particular substance's properties. T/K = θ/°C + 273.15.", note:""},
+    {t:"Absolute zero", type:"define", def:"The lowest possible temperature, 0 K (–273.15 °C), at which particles have minimum internal energy.", note:""},
+    {t:"Specific heat capacity (c)", type:"define", def:"The energy required to raise the temperature of 1 kg of a substance by 1 K without change of state. Q = mcΔT. Measured in J kg⁻¹ K⁻¹.", note:""},
+    {t:"Specific latent heat (L)", type:"define", def:"The energy required to change the state of 1 kg of a substance at constant temperature. Q = mL. Measured in J kg⁻¹.", note:""},
+    {t:"Specific latent heat of fusion", type:"define", def:"The energy required to change 1 kg of substance from solid to liquid at constant temperature.", note:""},
+    {t:"Specific latent heat of vaporisation", type:"define", def:"The energy required to change 1 kg of substance from liquid to gas at constant temperature.", note:""},
+  ]},
+  {topic:"15. Ideal gases", level:"al", terms:[
+    {t:"Mole", type:"define", def:"The amount of substance containing as many particles as there are atoms in 12 g of carbon-12, equal to Avogadro's number Nₐ ≈ 6.02 × 10²³.", note:"SI base quantity"},
+    {t:"Ideal gas", type:"define", def:"A gas that obeys pV = nRT at all temperatures and pressures. Molecules have no intermolecular forces except during perfectly elastic collisions.", note:""},
+    {t:"Boltzmann constant (k)", type:"define", def:"A fundamental constant equal to R/Nₐ = 1.38 × 10⁻²³ J K⁻¹. Relates average molecular kinetic energy to temperature.", note:"k = R/Nₐ"},
+    {t:"Root-mean-square speed (cᵣₘₛ)", type:"define", def:"The square root of the mean of the squares of the speeds of all molecules in a gas. cᵣₘₛ = √⟨c²⟩.", note:""},
+  ]},
+  {topic:"16. Thermodynamics", level:"al", terms:[
+    {t:"Internal energy", type:"define", def:"The sum of the random kinetic and potential energies of all the molecules in a system.", note:"Determined entirely by the state of the system"},
+    {t:"First law of thermodynamics", type:"define", def:"The increase in internal energy of a system equals the energy supplied by heating plus the work done on the system. ΔU = q + W.", note:""},
+  ]},
+  {topic:"17. Oscillations", level:"al", terms:[
+    {t:"Simple harmonic motion (SHM)", type:"define", def:"Oscillatory motion in which the acceleration is directly proportional to displacement from a fixed equilibrium point and always directed towards that point. a = –ω²x.", note:""},
+    {t:"Angular frequency (ω)", type:"define", def:"The rate of change of phase angle in oscillatory motion. ω = 2π/T = 2πf. Measured in rad s⁻¹.", note:""},
+    {t:"Damping", type:"define", def:"The reduction in amplitude of oscillations due to a resistive force removing energy from the system.", note:""},
+    {t:"Light damping", type:"define", def:"Damping in which the system oscillates with gradually decreasing amplitude over many cycles.", note:""},
+    {t:"Critical damping", type:"define", def:"The degree of damping at which the system returns to equilibrium in the shortest time without oscillating.", note:""},
+    {t:"Heavy (over)damping", type:"define", def:"Damping greater than critical, in which the system returns slowly to equilibrium without oscillating.", note:""},
+    {t:"Resonance", type:"define", def:"The condition in which a driven system oscillates at maximum amplitude when forced at its natural frequency.", note:""},
+    {t:"Natural frequency", type:"define", def:"The frequency at which a system oscillates freely when displaced and released.", note:""},
+  ]},
+  {topic:"18. Electric fields", level:"al", terms:[
+    {t:"Electric field", type:"define", def:"A region of space in which a charged object experiences a force. Defined as force per unit positive charge.", note:""},
+    {t:"Electric field strength (E)", type:"define", def:"The force per unit positive charge at a point in an electric field. E = F/q. Measured in N C⁻¹ or V m⁻¹.", note:""},
+    {t:"Coulomb's law", type:"define", def:"The electrostatic force between two point charges is proportional to the product of the charges and inversely proportional to the square of their separation.", note:"F = Q₁Q₂ / (4πε₀r²)"},
+    {t:"Electric potential (V)", type:"define", def:"The work done per unit positive charge in bringing a small test charge from infinity to that point. Measured in volts (V).", note:"V = Q / (4πε₀r)"},
+    {t:"Electric potential energy", type:"key", def:"The potential energy of a charge at a point in an electric field. Eₚ = Qq / (4πε₀r).", note:""},
+  ]},
+  {topic:"19. Capacitance", level:"al", terms:[
+    {t:"Capacitance", type:"define", def:"The charge stored per unit potential difference. C = Q/V. Measured in farads (F).", note:""},
+    {t:"Time constant (τ)", type:"define", def:"The time for the charge, p.d., or current of a discharging capacitor to fall to 1/e (≈37%) of its initial value. τ = RC.", note:""},
+  ]},
+  {topic:"20. Magnetic fields", level:"al", terms:[
+    {t:"Magnetic flux density (B)", type:"define", def:"The force per unit current per unit length on a wire placed perpendicular to the field. F = BIL sinθ. Measured in tesla (T).", note:""},
+    {t:"Magnetic flux (Φ)", type:"define", def:"The product of the magnetic flux density and the cross-sectional area perpendicular to the field. Φ = BA. Measured in webers (Wb).", note:""},
+    {t:"Magnetic flux linkage", type:"define", def:"The product of the number of turns N in a coil and the magnetic flux Φ through it. Measured in Wb (or Wb-turns).", note:""},
+    {t:"Faraday's law", type:"define", def:"The magnitude of the induced e.m.f. in a circuit is proportional to the rate of change of magnetic flux linkage.", note:""},
+    {t:"Lenz's law", type:"define", def:"The direction of an induced current is such as to oppose the change in magnetic flux that causes it.", note:"A consequence of conservation of energy"},
+    {t:"Hall voltage (Vₕ)", type:"key", def:"The p.d. developed across a current-carrying conductor in a magnetic field, perpendicular to both current and field. Vₕ = BI/(ntq).", note:""},
+  ]},
+  {topic:"21. Alternating currents", level:"al", terms:[
+    {t:"Root-mean-square (r.m.s.) current", type:"define", def:"The equivalent steady direct current that dissipates the same power in a resistor as the alternating current. Iᵣₘₛ = I₀/√2 for sinusoidal AC.", note:""},
+    {t:"Root-mean-square (r.m.s.) voltage", type:"define", def:"The equivalent steady direct voltage that dissipates the same power in a resistor as the alternating voltage. Vᵣₘₛ = V₀/√2 for sinusoidal AC.", note:""},
+    {t:"Rectification", type:"key", def:"The conversion of alternating current to (pulsating) direct current using diodes.", note:"Half-wave: 1 diode. Full-wave: 4 diodes (bridge rectifier)"},
+    {t:"Smoothing", type:"key", def:"The reduction of variation in rectified output voltage using a capacitor connected in parallel with the load.", note:"Larger C or larger load resistance → less ripple"},
+  ]},
+  {topic:"22. Quantum physics", level:"al", terms:[
+    {t:"Photon", type:"define", def:"A quantum of electromagnetic energy. E = hf. Has momentum p = E/c.", note:""},
+    {t:"Electronvolt (eV)", type:"define", def:"The kinetic energy gained by an electron accelerated through a potential difference of 1 volt. 1 eV = 1.6 × 10⁻¹⁹ J.", note:""},
+    {t:"Photoelectric effect", type:"key", def:"The emission of electrons from a metal surface when illuminated by electromagnetic radiation at or above the threshold frequency.", note:""},
+    {t:"Threshold frequency", type:"define", def:"The minimum frequency of electromagnetic radiation required to cause photoelectric emission from a metal surface.", note:""},
+    {t:"Work function (Φ)", type:"define", def:"The minimum energy required to remove an electron from the surface of a metal. hf = Φ + ½mv²ₘₐₓ.", note:""},
+    {t:"de Broglie wavelength", type:"define", def:"The wavelength associated with a moving particle. λ = h/p = h/mv.", note:"Evidence: electron diffraction"},
+    {t:"Wave-particle duality", type:"key", def:"The concept that particles exhibit wave properties (e.g. electron diffraction) and waves exhibit particle properties (e.g. photoelectric effect).", note:""},
+    {t:"Energy level", type:"define", def:"One of the discrete, quantised energy values that an electron in an atom can possess.", note:""},
+    {t:"Emission line spectrum", type:"define", def:"A series of bright lines on a dark background, each corresponding to a photon emitted when an electron falls from a higher to a lower energy level.", note:"hf = E₁ – E₂"},
+    {t:"Absorption line spectrum", type:"define", def:"A continuous spectrum with dark lines at specific frequencies where photons have been absorbed by electrons moving to higher energy levels.", note:""},
+  ]},
+  {topic:"23. Nuclear physics", level:"al", terms:[
+    {t:"Mass defect", type:"define", def:"The difference between the total mass of the separate nucleons and the actual mass of the nucleus. Δm = total nucleon mass – nuclear mass.", note:"E = Δmc²"},
+    {t:"Binding energy", type:"define", def:"The energy required to completely separate a nucleus into its individual nucleons. Equivalent to the mass defect via E = mc².", note:""},
+    {t:"Binding energy per nucleon", type:"key", def:"The total binding energy of a nucleus divided by its nucleon number. A measure of nuclear stability.", note:"Maximum around iron-56 (Fe-56)"},
+    {t:"Nuclear fission", type:"define", def:"The splitting of a heavy nucleus into two smaller nuclei of comparable mass, releasing energy because the products have greater binding energy per nucleon.", note:""},
+    {t:"Nuclear fusion", type:"define", def:"The combining of two light nuclei to form a heavier nucleus, releasing energy because the product has greater binding energy per nucleon.", note:""},
+    {t:"Activity (A)", type:"define", def:"The number of radioactive decays per unit time. A = λN. Measured in becquerels (Bq), where 1 Bq = 1 decay per second.", note:""},
+    {t:"Decay constant (λ)", type:"define", def:"The probability of decay of a given nucleus per unit time. A = λN. Measured in s⁻¹.", note:""},
+    {t:"Half-life (t½)", type:"define", def:"The time taken for the activity, or the number of undecayed nuclei, to fall to half of its original value. t½ = 0.693/λ.", note:""},
+  ]},
+  {topic:"24. Medical physics", level:"al", terms:[
+    {t:"Specific acoustic impedance (Z)", type:"define", def:"The product of the density of a medium and the speed of sound in it. Z = ρc. Measured in kg m⁻² s⁻¹.", note:""},
+    {t:"Attenuation", type:"key", def:"The gradual reduction in intensity of a wave as it passes through a medium. I = I₀e⁻ᵘˣ.", note:"Applies to both ultrasound and X-rays"},
+    {t:"Piezoelectric effect", type:"key", def:"The property of certain crystals to generate an e.m.f. when deformed mechanically, or to change shape when a p.d. is applied.", note:"Used in ultrasound transducers"},
+    {t:"Tracer", type:"define", def:"A radioactive substance introduced into the body that is absorbed by the tissue under study, used in PET scanning.", note:"Must decay by β⁺ for PET"},
+    {t:"Annihilation", type:"define", def:"The process in which a particle meets its antiparticle and both are converted entirely into energy as photons.", note:"e⁻ + e⁺ → 2 gamma photons travelling in opposite directions"},
+  ]},
+  {topic:"25. Astronomy & cosmology", level:"al", terms:[
+    {t:"Luminosity (L)", type:"define", def:"The total power of electromagnetic radiation emitted by a star. Measured in watts (W).", note:""},
+    {t:"Radiant flux intensity (F)", type:"define", def:"The power received per unit area at a distance d from a source of luminosity L. F = L/(4πd²). Measured in W m⁻².", note:""},
+    {t:"Standard candle", type:"define", def:"An astronomical object of known luminosity, used to determine distances to galaxies by comparing luminosity with observed flux intensity.", note:""},
+    {t:"Wien's displacement law", type:"define", def:"The peak wavelength of a star's emission spectrum is inversely proportional to its surface temperature. λₘₐₓ ∝ 1/T.", note:""},
+    {t:"Stefan–Boltzmann law", type:"define", def:"The total luminosity of a star is proportional to its surface area and the fourth power of its surface temperature. L = 4πσr²T⁴.", note:""},
+    {t:"Redshift", type:"define", def:"The increase in observed wavelength of electromagnetic radiation from a source moving away from the observer. Δλ/λ ≈ v/c.", note:"Evidence that the universe is expanding"},
+    {t:"Hubble's law", type:"define", def:"The recession speed of a galaxy is directly proportional to its distance from the observer. v ≈ H₀d.", note:"H₀ = Hubble constant"},
+    {t:"Big Bang theory", type:"key", def:"The cosmological model that the universe began from an extremely hot, dense state and has been expanding ever since, supported by redshift and cosmic microwave background radiation.", note:""},
+  ]},
+];
+
+let currentFilter = 'all';
+let currentSearch = '';
+let activeModal = null;
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentFilter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  });
+});
+document.getElementById('searchInput').addEventListener('input', e => {
+  currentSearch = e.target.value.toLowerCase();
+  render();
+});
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function openModal(idx, tidx) {
+  const section = DATA[idx];
+  const term = section.terms[tidx];
+  document.getElementById('mTitle').textContent = term.t;
+  const lbl = section.level === 'as' ? 'AS Level' : 'A Level';
+  const lclass = section.level === 'as' ? 'lb-as' : 'lb-al';
+  const tclass = term.type === 'define' ? 'lb-define' : 'lb-key';
+  const tlbl = term.type === 'define' ? 'Explicit define point' : 'Key term';
+  document.getElementById('mMeta').innerHTML = `
+    <span class="legend-badge ${lclass}">${lbl}</span>
+    <span class="legend-badge ${tclass}">${tlbl}</span>
+    <span style="font-size:12px;color:rgba(255,255,255,0.55);align-self:center">${section.topic}</span>`;
+  document.getElementById('mDef').textContent = term.def;
+  const noteEl = document.getElementById('mNote');
+  if (term.note) { noteEl.textContent = term.note; noteEl.style.display = 'block'; }
+  else { noteEl.style.display = 'none'; }
+  document.getElementById('modalBg').classList.add('open');
+}
+function closeModal() { document.getElementById('modalBg').classList.remove('open'); }
+
+function render() {
+  const out = document.getElementById('output');
+  let total = 0;
+  let html = '';
+  DATA.forEach((section, sidx) => {
+    const terms = section.terms.map((t, tidx) => ({t, tidx})).filter(({t}) => {
+      const levelOk = currentFilter === 'all'
+        || currentFilter === section.level
+        || (currentFilter === 'define' && t.type === 'define');
+      const q = currentSearch;
+      const searchOk = !q || t.t.toLowerCase().includes(q) || t.def.toLowerCase().includes(q);
+      return levelOk && searchOk;
+    });
+    if (!terms.length) return;
+    total += terms.length;
+    const lvlClass = section.level === 'as' ? 'level-as' : 'level-al';
+    const lvlLabel = section.level === 'as' ? 'AS' : 'A2';
+    html += `<div class="topic-section">
+      <div class="topic-header">
+        <span>${section.topic}</span>
+        <span class="level-tag ${lvlClass}">${lvlLabel}</span>
+        <div class="topic-divider"></div>
+      </div>
+      <div class="terms-grid">`;
+    terms.forEach(({t, tidx}) => {
+      const bclass = t.type === 'define' ? 'badge-define' : 'badge-key';
+      const blabel = t.type === 'define' ? 'define' : 'key';
+      html += `<div class="term-pill" onclick="openModal(${sidx},${tidx})">
+        <span>${t.t}</span>
+        <span class="badge ${bclass}">${blabel}</span>
+      </div>`;
+    });
+    html += `</div></div>`;
+  });
+  if (!total) html = `<div class="no-results">No terms match — try a different search.</div>`;
+  document.getElementById('countBar').textContent = `${total} term${total !== 1 ? 's' : ''} shown`;
+  out.innerHTML = html;
+}
+
+render();
+</script>
+</body>
+</html>
